@@ -2,9 +2,11 @@ package ro.roxanavideanu.apometre.dao;
 
 import java.util.List;
 
-public interface UserDAO {
+import ro.roxanavideanu.apometre.entities.User;
+
+public interface UserDAO extends GenericDAO<User>{
 	
 	
-	public List<String> retrieveAllUsers();
+	public List<User> retrieveAllUsers();
 
 }

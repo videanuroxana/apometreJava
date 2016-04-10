@@ -11,13 +11,7 @@
 	<center>
 	
 		
-		Numele user-ului este: ${userName}
-				
-		<ul>		
-			<c:forEach var="la" items="${userList}">
-				<li>${la}</li>
-			</c:forEach>		
-		</ul>
+		
 		
 		
 	</center>

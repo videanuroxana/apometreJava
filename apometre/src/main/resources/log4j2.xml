@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" name="productionLog4j2Conf">
+	
+	<Properties>		
+		<Property name="FILE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN} [%t] %-40.40c{1.} : %m%n</Property>
+		<Property name="CONSOLE_PATTERN">%5p [%t] (%F:%L) - %m%n</Property>
+	</Properties>
+	
+	<Appenders>				
+		
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${CONSOLE_PATTERN}" />
+		</Console>		
+		
+	</Appenders>
+		
+	<Loggers>
+		<Logger name="org.springframework" level="DEBUG" />		
+		<!-- 
+		<Logger name="org.springframework.security" level="ERROR" />
+		-->
+		<Logger name="org.springframework.transaction" level="TRACE" />
+		
+		<!--
+		<Logger name="org.hibernate" level="DEBUG" />
+		<Logger name="org.hibernate.type" level="TRACE" /> 
+		-->
+		<Root level="DEBUG">			
+			<AppenderRef ref="Console" />
+	<!--    <AppenderRef ref="File" />  -->
+		</Root>
+	</Loggers>
+
+</Configuration>

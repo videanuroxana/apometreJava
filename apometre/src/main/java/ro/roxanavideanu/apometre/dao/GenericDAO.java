@@ -1,0 +1,16 @@
+package ro.roxanavideanu.apometre.dao;
+
+public interface GenericDAO<T> {	
+	
+    public abstract T create(T t);
+    public abstract void delete(Object id);
+    public abstract T find(Object id);
+    public abstract T update(T t);
+    
+    
+    
+	public abstract void flush();
+	public abstract void clear();	
+	public abstract T getReference(Class<T> entityClass,Object primaryKey);
+	
+}
