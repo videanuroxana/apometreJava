@@ -2,6 +2,8 @@ package ro.roxanavideanu.apometre.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class Record {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column (name="user_id")
@@ -22,10 +25,10 @@ public class Record {
 	private Integer luna;
 	
 	@Column (name="apa_rece")
-	private Double apa_rece;
+	private Double apaRece;
 	
 	@Column (name="apa_calda")
-	private Double apa_calda;
+	private Double apaCalda;
 	
 	@Column (name="room_id")
 	private Integer room_id;
@@ -62,20 +65,20 @@ public class Record {
 		this.luna = luna;
 	}
 
-	public Double getApa_rece() {
-		return apa_rece;
+	public Double getApaRece() {
+		return apaRece;
 	}
 
-	public void setApa_rece(Double apa_rece) {
-		this.apa_rece = apa_rece;
+	public void setApaRece(Double apaRece) {
+		this.apaRece = apaRece;
 	}
 
-	public Double getApa_calda() {
-		return apa_calda;
+	public Double getApaCalda() {
+		return apaCalda;
 	}
 
-	public void setApa_calda(Double apa_calda) {
-		this.apa_calda = apa_calda;
+	public void setApaCalda(Double apaCalda) {
+		this.apaCalda = apaCalda;
 	}
 
 	public Integer getRoom_id() {
@@ -109,6 +112,12 @@ public class Record {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Record [id=" + id + ", user_id=" + user_id + ", an=" + an + ", luna=" + luna + ", apa_rece=" + apaRece
+				+ ", apa_calda=" + apaCalda + ", room_id=" + room_id + "]";
 	}
 	
 	
